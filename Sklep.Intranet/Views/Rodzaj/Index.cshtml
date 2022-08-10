@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Sklep.Data.Data.Tablica.Rodzaj>
+
+@{
+   ViewData["Title"] = "Index";
+}
+
+
+
+<h1>Rodzaje produktów</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Dodaj rodzaj</a>
+</p>
+
+<div class="card mb-4">
+
+      <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Aktualne rodzaje w naszym sklepie
+      </div>
+
+     <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nazwa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Opis)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model) 
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nazwa)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Opis)
+                        </td>
+                        <td>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdRodzaju">Edit</a> 
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdRodzaju">Delete</a>
+                        </td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+

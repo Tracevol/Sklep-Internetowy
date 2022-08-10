@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.SprzedazSamochodu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Wyniki F1</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Dodaj wynik</a>
+</p>
+
+<div class="card mb-4">
+
+       <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+       Ogłoszenia sprzedaży samochodów
+      </div>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Marka)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Model)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.KrajPochodzenia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Przebieg)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cena)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lokalizacja)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) 
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marka)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KrajPochodzenia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Przebieg)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cena)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lokalizacja)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefon)
+                    </td>
+                    <td>
+                        <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdSprzedazy">Edit</a> 
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdSprzedazy">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+</div>
+
+

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.Parametry>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Parametry</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Dodaj wynik</a>
+</p>
+
+<div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Parametry
+      </div>
+
+      <table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Wartosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wartosc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdParametru">Edit</a> 
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdParametru">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+ </div>
+

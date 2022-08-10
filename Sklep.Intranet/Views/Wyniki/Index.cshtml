@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.Wyniki>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Wyniki F1</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Dodaj wynik</a>
+</p>
+
+<div class="card mb-4">
+
+      <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Mistrzosta świata F1
+      </div>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PozycjaKierowcy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImieNazwisko)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Zespol)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Punkty)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PozycjaKierowcy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImieNazwisko)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zespol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Punkty)
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdWyniku">Edit</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdWyniku">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+
+</div>
+
+

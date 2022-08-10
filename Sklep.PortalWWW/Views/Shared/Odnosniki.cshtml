@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.Strona>
+        
+    <div class="nav-wrapper container">
+              <ul class="right hide-on-med-and-down">
+                <li>@Html.ActionLink("Strona główna","Index","Home")</li>
+                @foreach(var item in Model)
+                {
+                     <li>@Html.ActionLink(item.LinkTytul,"Index","Home", new {id = item.IdStrona}, null)</li>
+                }
+                <li>@Html.ActionLink("Sklep Internetowy","Promocje","Sklep")</li>
+              </ul>
+      </div>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.Ciekawostki>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ciekawostki</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+
+<div class="card mb-4">
+
+          <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Parametry
+          </div>
+
+          <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LinkTytul)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tytul)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tresc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Zdjecie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pozycja)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LinkTytul)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tytul)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tresc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zdjecie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pozycja)
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdCiekawostki">Edit</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdCiekawostki">Delete</a>
+
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+
+ </div>
+

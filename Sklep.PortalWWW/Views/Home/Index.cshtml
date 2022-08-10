@@ -1,0 +1,30 @@
+﻿
+
+@{
+    ViewData["Title"] = "Firma";
+}
+
+    <div class="container grey">
+      <h1 class="header center blue-text">Parc Fermé</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">
+            Witamy na stronie poświęconej motoryzacji.
+            <br/>
+            Znajdziesz tutaj wiele ciekawostek na temat pojazdów, opinie na temat pojazdów nowych jak i używanych.
+            <br/>
+            Możesz również za drobną opłatą sprawdzić historię swojego pojazdu, którego posiadasz albo zamierzasz kupić.
+            Znajdziesz również wiele ogłoszeń sprzedaży aut używanych jak i również części do nich.
+        </h5>
+      </div>
+    </div>
+
+
+
+  <div class="container">
+
+       @await Html.PartialAsync("Aktualnosci",(IEnumerable<Sklep.Data.Data.CMS.Aktualnosci>)ViewBag.ModelAktualnosci)
+
+    <br>
+    <br>
+
+  </div>

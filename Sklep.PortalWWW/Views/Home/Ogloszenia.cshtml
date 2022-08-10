@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.SprzedazSamochodu>
+@{
+    ViewData["Title"] = "Sprzedaz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div class="container">
+
+	<div class="section">
+
+        <div class="row gray">
+	  
+			<div class="col m2">
+					@foreach (var ogloszenia in Model)
+					{
+					<div class="col s12 m6">
+						<div class="card">
+						  <div class="card-image">
+							  <img src="~/lib/materialize/css/nophoto.jpg">
+						  </div>
+
+						  		<div class="card-action">
+								   <p class="card-title">ID: @ogloszenia.IdSprzedazy </p>
+								   <p class="card-title">Marka pojazdu: @ogloszenia.Marka </p>
+								   <p class="card-title">Model pojazdu: @ogloszenia.Model </p>
+								   <p class="card-title">Kraj pochodzenia: @ogloszenia.KrajPochodzenia </p>
+								   <p class="card-title">Cena: @ogloszenia.Cena.ToString("0.00") </p>
+								   <p class="card-title">Lokalizacja: @ogloszenia.Lokalizacja </p>
+
+								</div>
+
+						</div>
+					</div>
+				   }
+			</div>
+	    </div>
+
+	</div>
+
+</div>
+

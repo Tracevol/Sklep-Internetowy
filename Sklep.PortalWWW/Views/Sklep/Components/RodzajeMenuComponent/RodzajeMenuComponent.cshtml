@@ -1,0 +1,15 @@
+﻿
+@model IEnumerable<Sklep.Data.Data.Tablica.Rodzaj>
+        
+    <div class="nav-wrapper container">
+              <ul class="right hide-on-med-and-down">
+                <li>@Html.ActionLink("Strona główna","Index","Home")</li>
+                @foreach(var item in Model)
+                {
+                     <li>@Html.ActionLink(item.Nazwa,"Index","Sklep", new {id = item.IdRodzaju}, null)</li>
+                }
+               <a asp-action="Index" asp-controller="Koszyk" class="waves-effect orange-light btn-large"><i class="material-icons right">shopping_cart</i>  Koszyk </a>
+                             
+
+              </ul>
+      </div>

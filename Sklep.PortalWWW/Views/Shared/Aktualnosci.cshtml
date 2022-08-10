@@ -1,0 +1,53 @@
+﻿
+@model IEnumerable<Sklep.Data.Data.CMS.Aktualnosci>
+
+ <div class="section">
+      <div class="row grey">
+          @foreach(var item in Model)
+        {
+          <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">@item.LinkTytul</h5>
+            <p class="light">
+                @item.TablicaOgloszen
+            </p>
+          </div>
+        </div>        
+        }
+
+        
+@*      <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Ciekawosti z świata motoryzacji</h5>
+            <p class="light"> 
+                Na naszej stronie znajdziesz wiele ciekawostek z świata motoryzacji.
+                Najlepsze auta do miasta. A jakie w trasę ? 
+                <br/>
+                Zakup swojego pierwszego auta.
+                <br/>
+                Co wybrać aby nie wpaść na minę.
+                <br/>
+                Auta sportowe w dobrej cenie. Jaką markę wybrać ?              
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center black-text"><i class="material-icons">manage_accounts</i></h2>
+            <h5 class="center">Najnowsze informacje z świata motosportu</h5>
+
+            <p class="light">
+                Znajdziesz u nas wiele informacji o najnowszych wydarzeniach sportowych w świecie motoryzacji.
+                <br/>
+                Najnowsze informacje z świata F1 "Królowej motosportu", wyniki, 
+                tabele kwafilifkacji genralnej, nalizy wyścigów i wiele innych.
+            </p>
+          </div>
+        </div>*@
+
+      </div>
+
+ </div>

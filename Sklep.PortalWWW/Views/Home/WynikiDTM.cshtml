@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.WynikiDTM>
+@{
+    ViewData["Title"] = "Wyniki";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card mb-4">
+    <table class="table table-dark">
+        <thead>
+
+                <tr>
+                    <td>Pozycja kierowcy</td>
+                    <td>Imię i naziwsko</td>
+                    <td>Zespół</td>
+                    <td>Liczba punktów</td>
+                </tr>
+            
+            @foreach(var wynikiDTM in Model)
+            {
+                <tr>
+                    <td>@wynikiDTM.PozycjaKierowcy</td>
+                    <td>@wynikiDTM.ImieNazwisko</td>
+                    <td>@wynikiDTM.Zespol</td>
+                    <td>@wynikiDTM.Punkty</td>
+                </tr>
+            }
+        </thead>
+    </table>
+    </div>  

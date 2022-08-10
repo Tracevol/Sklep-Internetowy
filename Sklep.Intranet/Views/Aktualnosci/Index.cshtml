@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Sklep.Data.Data.CMS.Aktualnosci>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Aktualności</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Dodaj wynik</a>
+    </p>
+
+    <div class="card mb-4">
+
+      <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Aktualności
+      </div>
+
+        <table class="table table-dark">
+
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LinkTytul)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tytul)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TablicaOgloszen)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pozycja)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LinkTytul)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tytul)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TablicaOgloszen)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pozycja)
+                    </td>
+                    <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.IdStrona">Edit</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.IdStrona">Delete</a>
+                    </td>
+                </tr>
+        }
+            </tbody>
+        </table>
+
+    </div>

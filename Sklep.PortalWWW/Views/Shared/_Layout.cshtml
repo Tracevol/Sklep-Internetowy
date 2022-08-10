@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sklep.PortalWWW</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="~/lib/materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Firma.PortalWWW.styles.css" asp-append-version="true" />
+</head>
+<body>
+@*    <nav class="grey" role="navigation">
+     <div class="nav-wrapper container">
+      <ul class="right hide-on-med-and-down">
+        <li>@Html.ActionLink("Logowanie","Logowanie","Home", new{@class="material-icons", title = "login"})</li>
+        <li>@Html.ActionLink("Rejestracja","Rejestracja","Home")</li>
+      </ul>
+      </div>
+    </nav>*@
+
+    <nav class="grey" role="navigation">
+
+      <div class="nav-wrapper container">
+              <ul class="right hide-on-med-and-down">
+                <li>@Html.ActionLink("Strona główna","Index","Home")</li>
+                <li>@Html.ActionLink("Sklep Internetowy","Index","Sklep")</li>
+                <li>@Html.ActionLink("Ciekawostki","Ciekawostki","Home")</li>
+                <li>@Html.ActionLink("Ogłoszenia","Ogloszenia","Home")</li>
+                <li>@Html.ActionLink("Wyniki","Wyniki","Home")</li>
+                <li>@Html.ActionLink("Motoryzacja","Motoryzacja","Home")</li>
+                <li>@Html.ActionLink("Prywatność","Privacy","Home")</li>
+              </ul>
+          </div>
+
+         @* @await Html.PartialAsync("Odnosniki",(IEnumerable<Sklep.Data.Data.CMS.Strona>)ViewBag.ModelStrony)*@
+
+    </nav>
+
+      <div class="section no-pad-bot" id="index-banner">
+            @RenderBody()
+      </div>
+     <footer class="page-footer grey">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Nasz adres:</h5>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.8492751004487!2d19.95591671571825!3d50.089108779427065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165af1e23cf52b%3A0xb29e08d58886d335!2sDobrego%20Pasterza%201%2C%2031-416%20Krak%C3%B3w!5e0!3m2!1spl!2spl!4v1646249224482!5m2!1spl!2spl" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">Social media</h5>
+              <ul>
+                <li><a class="blue-text" href="https://www.facebook.com/piotrek.wegrzyn.39"><strong>Facebook</strong></a></li>
+                <li><a class="red-text" href="https://www.youtube.com/"><strong>YouTube</strong></a></li>
+                <li><a class="orange-text" href="https://www.google.pl/"> <strong>Google</strong></a></li>
+                <li><a class="blue-text.text-lighten-4" href="https://twitter.com/home?lang=pl"><strong>Twitter</strong></a></li>
+
+              </ul>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">Kontakt</h5>
+              <ul>
+                <li><a class="white-text">Nr telefonu: +48 444 222 444</a></li>
+                <li><a class="white-text">Adres e-mail: piotr.wegrzyn@gmail.com</a></li>
+                <li><a class="white-text">Nr faks:+48 (22) 356 66 77</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+         <strong> Made by <a class="black-text"> Piotr Węgrzyn</a></strong>
+          </div>
+        </div>
+      </footer>
+
+
+
+
+
+
+      <!--  Scripts-->
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src="js/materialize.js"></script>
+      <script src="js/init.js"></script>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

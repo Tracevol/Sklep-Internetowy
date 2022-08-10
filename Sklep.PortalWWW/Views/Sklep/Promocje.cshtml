@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Sklep.Data.Data.Tablica.Ogloszenia>
+@{
+    ViewData["Title"] = "Promocje";
+	Layout = "_SklepLayout";
+}
+
+
+<div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Promocje
+      </div>
+
+<table class="table table-dark">
+        <thead>
+            <tr>
+               <th>Zdjęcia</th> 
+               <th>Nazwa</th> 
+               <th>Cena</th> 
+               <th>Opis</th> 
+            </tr>        
+        </thead>
+
+    <tbody>
+        @foreach(var ogloszenia in Model)
+            {
+                <tr>
+                    <td>Foto</td>
+                    <td>
+                        @Html.ActionLink(ogloszenia.Nazwa,"Szczegoly","Sklep", new {id = ogloszenia.IdOgloszenia}, null)
+                        @*@ogloszenia.Nazwa*@
+                    </td>
+                    <td>
+                        @ogloszenia.Cena.ToString("0.00")
+                    </td>
+                    <td>@ogloszenia.Opis</td>
+                </tr>
+            }
+
+    </tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
